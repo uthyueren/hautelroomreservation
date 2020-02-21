@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "698824772163",
+    "firebase_url": "https://uthman-d0921.firebaseio.com",
+    "project_id": "uthman-d0921",
+    "storage_bucket": "uthman-d0921.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698824772163:android:6381f497b386ddab1f62f6",
+        "android_client_info": {
+          "package_name": "com.example.loginproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698824772163-pdqkeirfehv7hk7kr9fgh1pv5s1qlvmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkHPsuztMxgeP4wrlhrlLsEfaW6LNZO6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698824772163-pdqkeirfehv7hk7kr9fgh1pv5s1qlvmu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
