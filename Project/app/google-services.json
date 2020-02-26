@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "698824772163",
-    "firebase_url": "https://uthman-d0921.firebaseio.com",
-    "project_id": "uthman-d0921",
-    "storage_bucket": "uthman-d0921.appspot.com"
+    "project_number": "244149875312",
+    "firebase_url": "https://login-demo-398df.firebaseio.com",
+    "project_id": "login-demo-398df",
+    "storage_bucket": "login-demo-398df.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:698824772163:android:6381f497b386ddab1f62f6",
+        "mobilesdk_app_id": "1:244149875312:android:593cfc49c9a2f833237ab5",
         "android_client_info": {
           "package_name": "com.example.loginproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "698824772163-pdqkeirfehv7hk7kr9fgh1pv5s1qlvmu.apps.googleusercontent.com",
+          "client_id": "244149875312-flelrvcfdhmspcq90v1d7bjs0mcr12sm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginproject",
+            "certificate_hash": "43cc400c53c813973bea5264ba9a1b4f764d0c5f"
+          }
+        },
+        {
+          "client_id": "244149875312-5e8f9go37oi6vpn8q439hftn3o69tnv9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkHPsuztMxgeP4wrlhrlLsEfaW6LNZO6c"
+          "current_key": "AIzaSyBNt677EeCrCwg5ycn5WzTrs2IktPXTPPo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "698824772163-pdqkeirfehv7hk7kr9fgh1pv5s1qlvmu.apps.googleusercontent.com",
+              "client_id": "244149875312-5e8f9go37oi6vpn8q439hftn3o69tnv9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
