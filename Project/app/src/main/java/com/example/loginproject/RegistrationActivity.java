@@ -93,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if(task.isSuccessful()){
-                                //sendEmailVerification();
+                                sendEmailVerification();
                                 sendUserData();
                                 firebaseAuth.signOut();
                                 Toast.makeText(RegistrationActivity.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
@@ -135,7 +135,7 @@ public class RegistrationActivity extends AppCompatActivity {
         age = userAge.getText().toString();
 
         if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty() || imagePath == null){
-            Toast.makeText(this, "PLease enter all the details", Toast.LENGTH_SHORT). show();
+            Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT). show();
         }else{
             result = true;
         }
