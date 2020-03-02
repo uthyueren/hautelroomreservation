@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword){
 
-        progressDialog.setMessage("What this do????");
+        progressDialog.setMessage("Logging in");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
