@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class Checkout extends AppCompatActivity {
 
-    TextView checkin, checkout, daynight, totalprice;
+    TextView checkIn, checkOut, dayNight, totalPrice;
     Button btnCheckout;
 
     @Override
@@ -18,10 +18,10 @@ public class Checkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
-        checkin = (TextView)findViewById(R.id.checkin);
-        checkout = (TextView)findViewById(R.id.checkout);
-        daynight = (TextView)findViewById(R.id.tvDayNight);
-        totalprice = (TextView)findViewById(R.id.tvTotalPrice);
+        checkIn = (TextView)findViewById(R.id.checkin);
+        checkOut = (TextView)findViewById(R.id.checkout);
+        dayNight = (TextView)findViewById(R.id.tvDayNight);
+        totalPrice = (TextView)findViewById(R.id.tvTotalPrice);
         btnCheckout = (Button) findViewById(R.id.btnCheckout);
 
         btnCheckout.setOnClickListener(new View.OnClickListener() {

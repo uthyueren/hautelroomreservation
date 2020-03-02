@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Family Tri Room"
+                android:text="Family Triple"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Family Quad Room"
+                android:text="Family Suite"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
