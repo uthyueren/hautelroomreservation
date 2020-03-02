@@ -61,11 +61,33 @@
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="40dp"/>
 
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="360dp"
+            <ImageView
+                android:id="@+id/minus1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_remove_black_24dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tvSingleNum"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:id="@+id/plus1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_marginLeft="370dp"
                 android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -99,11 +121,33 @@
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="40dp"/>
 
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="360dp"
+            <ImageView
+                android:id="@+id/minus2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_remove_black_24dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tvTwinNum"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:id="@+id/plus2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_marginLeft="370dp"
                 android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -137,11 +181,33 @@
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="40dp"/>
 
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="360dp"
+            <ImageView
+                android:id="@+id/minus3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_remove_black_24dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tvTriNum"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:id="@+id/plus3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_marginLeft="370dp"
                 android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -175,11 +241,33 @@
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="40dp"/>
 
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="360dp"
+            <ImageView
+                android:id="@+id/minus4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_remove_black_24dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tvQuadNum"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:id="@+id/plus4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#F84886"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_marginLeft="370dp"
                 android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

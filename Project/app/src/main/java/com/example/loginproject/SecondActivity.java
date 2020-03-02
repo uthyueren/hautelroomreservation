@@ -42,7 +42,6 @@ public class SecondActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         firebaseAuth = FirebaseAuth.getInstance();
 
         btnContinue.setOnClickListener(new View.OnClickListener() {

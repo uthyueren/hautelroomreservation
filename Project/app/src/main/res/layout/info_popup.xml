@@ -27,7 +27,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:id="@+id/cvSingle">
+            android:onClick="showPopupSingle">
+
             <ImageView
                 android:layout_width="115dp"
                 android:layout_height="wrap_content"
@@ -39,14 +40,6 @@
                 android:text="Single Room"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desc"
-                android:textSize="18sp"
-                android:layout_marginLeft="125dp"
-                android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
     <LinearLayout
@@ -58,7 +51,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:id="@+id/cvTwin">
+            android:onClick="showPopupTwin">
 
             <ImageView
                 android:layout_width="115dp"
@@ -71,14 +64,6 @@
                 android:text="Twin Room"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desc"
-                android:textSize="18sp"
-                android:layout_marginLeft="125dp"
-                android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
     <LinearLayout
@@ -90,7 +75,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:id="@+id/cvFamilyTri">
+            android:onClick="showPopupTri">
 
             <ImageView
                 android:layout_width="115dp"
@@ -103,14 +88,6 @@
                 android:text="Family Tri Room"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desc"
-                android:textSize="18sp"
-                android:layout_marginLeft="125dp"
-                android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
     <LinearLayout
@@ -122,7 +99,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:id="@+id/cvFamilyQuad">
+            android:onClick="showPopupQuad">
 
             <ImageView
                 android:layout_width="115dp"
@@ -135,14 +112,6 @@
                 android:text="Family Quad Room"
                 android:textSize="22sp"
                 android:layout_marginLeft="125dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desc"
-                android:textSize="18sp"
-                android:layout_marginLeft="125dp"
-                android:layout_marginTop="30dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 </LinearLayout>
