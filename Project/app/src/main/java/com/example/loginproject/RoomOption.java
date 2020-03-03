@@ -23,7 +23,6 @@ public class RoomOption extends AppCompatActivity {
     private Button confirm;
     private DatabaseReference databaseReference;
     RoomCount roomCount;
-    String count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,21 +50,51 @@ public class RoomOption extends AppCompatActivity {
         numBtn1.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-                count = numBtn1.getNumber();
+                int num = Integer.parseInt(numBtn1.getNumber());
+                roomCount.setQuantity1(num);
+                databaseReference.push().setValue(roomCount);
+                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        numBtn2.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                int num = Integer.parseInt(numBtn2.getNumber());
+                roomCount.setQuantity2(num);
+                databaseReference.push().setValue(roomCount);
+                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        numBtn3.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                int num = Integer.parseInt(numBtn3.getNumber());
+                roomCount.setQuantity3(num);
+                databaseReference.push().setValue(roomCount);
+                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        numBtn4.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                int num = Integer.parseInt(numBtn4.getNumber());
+                roomCount.setQuantity4(num);
+                databaseReference.push().setValue(roomCount);
+                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
             }
         });
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num1 = Integer.parseInt(numBtn1.getNumber());
-                roomCount.setQuantity1(num1);
-                databaseReference.push().setValue(roomCount);
-                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(RoomOption.this, Checkout.class));
-//                } else {
-//                    Toast.makeText(RoomOption.this, "Please add room", Toast.LENGTH_SHORT).show();
-//                }
+                if(roomCount.getQuantity1() != 0 || roomCount.getQuantity2() != 0 || roomCount.getQuantity3() != 0 || roomCount.getQuantity4() != 0){
+                    startActivity(new Intent(RoomOption.this, Checkout.class));
+                } else {
+                    Toast.makeText(RoomOption.this, "Please add room", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -68,7 +68,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-
         storageReference = firebaseStorage.getReference();
 
         userProfilePic.setOnClickListener(new View.OnClickListener() {

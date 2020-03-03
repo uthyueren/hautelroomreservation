@@ -36,6 +36,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="390dp"
             android:layout_height="60dp"
+            android:onClick="showPopupCID"
             android:background="@drawable/bg_shape"
             app:cardBackgroundColor="#F84886"
             android:layout_marginHorizontal="10dp">
@@ -51,7 +52,6 @@
 
             <ImageView
                 android:id="@+id/popupCID"
-                android:onClick="showPopupCID"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_date_range_black_24dp"
@@ -67,6 +67,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="390dp"
             android:layout_height="60dp"
+            android:onClick="showPopupCOD"
             android:background="@drawable/bg_shape"
             app:cardBackgroundColor="#F84886"
             android:layout_marginHorizontal="10dp">
@@ -82,7 +83,6 @@
 
             <ImageView
                 android:id="@+id/popupCOD"
-                android:onClick="showPopupCOD"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_date_range_black_24dp"

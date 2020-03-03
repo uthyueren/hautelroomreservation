@@ -4,28 +4,34 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-
-import java.lang.reflect.Member;
+import com.google.firebase.database.ValueEventListener;
 
 public class CalendarDate extends AppCompatActivity {
 
-    private TextView CID, COD;
-    private ImageView back;
-    private Button saveDateCID, saveDateCOD, confirm;
+    private TextView CID, COD, title;
+    private ImageView back, popcid, popcod;
+    private Button confirm;
     private Dialog popupCID, popupCOD;
     private DatabaseReference databaseReference;
-    private Date date;
+    CalendarView calendarViewCID, calendarViewCOD;
+    BookingDate bookingDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +43,20 @@ public class CalendarDate extends AppCompatActivity {
         back = (ImageView)findViewById(R.id.backDate);
         CID = (TextView)findViewById(R.id.tvCID);
         COD = (TextView)findViewById(R.id.tvCOD);
+        popcid = (ImageView)findViewById(R.id.popupCID);
+        popcod = (ImageView)findViewById(R.id.popupCOD);
         confirm = (Button)findViewById(R.id.btnConfirm);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        bookingDate = new BookingDate();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDate");
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CalendarDate.this, RoomOption.class));
+                bookingDate.setCheckoutdate(COD.getText().toString());
+                databaseReference.push().setValue(bookingDate);
+                Toast.makeText(CalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -56,64 +69,58 @@ public class CalendarDate extends AppCompatActivity {
     }
 
     public void showPopupCID(View v){
-        TextView close, cid;
-        CalendarView calendarViewCID;
+        Button saveCID;
 
-        popupCID.setContentView(R.layout.checkindate);
-        close = (TextView)popupCID.findViewById(R.id.closeCID);
-        cid = (TextView)popupCID.findViewById(R.id.tvTitle1) ;
-        saveDateCID = (Button)findViewById(R.id.btnSaveDateCID);
+        popupCID.setContentView(R.layout.checkindate_popup);
+        saveCID = (Button)popupCID.findViewById(R.id.saveCID);
+        title = (TextView)popupCID.findViewById(R.id.tvTitle1);
         calendarViewCID = (CalendarView)popupCID.findViewById(R.id.calendarViewCID);
 
         calendarViewCID.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String dateCID = (dayOfMonth + 1) + "/" + month + "/" + year;
+                title.setText(dateCID);
+                bookingDate.setCheckindate(dateCID);
+                databaseReference.push().setValue(bookingDate);
+                Toast.makeText(CalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
             }
         });
 
-        saveDateCID.setOnClickListener(new View.OnClickListener() {
+        saveCID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            }
-        });
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupCID.dismiss();;
+                popupCID.dismiss();
             }
         });
         popupCID.show();
     }
 
     public void showPopupCOD(View v){
-        TextView close, cod;
-        CalendarView calendarViewCOD;
+        Button saveCOD;
 
-        popupCOD.setContentView(R.layout.checkoutdate);
-        close = (TextView)popupCOD.findViewById(R.id.closeCOD);
-        cod = (TextView)popupCOD.findViewById(R.id.tvTitle2);
-        saveDateCOD = (Button)findViewById(R.id.btnSaveDateCOD);
+        popupCOD.setContentView(R.layout.checkoutdate_popup);
+        saveCOD = (Button)popupCOD.findViewById(R.id.saveCOD);
+        title = (TextView)popupCOD.findViewById(R.id.tvTitle2);
         calendarViewCOD = (CalendarView)popupCOD.findViewById(R.id.calendarViewCOD);
+
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.checkindate_popup, (ViewGroup)findViewById(R.id.layoutCOD));
 
         calendarViewCOD.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String dateCOD = (dayOfMonth + 1) + "/" + month + "/" + year;
+                title.setText(dateCOD);
+                COD.setText(dateCOD);
+
             }
         });
 
-        saveDateCOD.setOnClickListener(new View.OnClickListener() {
+        saveCOD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            }
-        });
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupCOD.dismiss();;
+                popupCOD.dismiss();
             }
         });
         popupCOD.show();
