@@ -22,7 +22,7 @@ public class RoomOption extends AppCompatActivity {
     private ElegantNumberButton numBtn1, numBtn2, numBtn3, numBtn4;
     private Button confirm;
     private DatabaseReference databaseReference;
-    RoomCount roomCount;
+    BookingDatabase bookingDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class RoomOption extends AppCompatActivity {
         numBtn2 = (ElegantNumberButton)findViewById(R.id.num2);
         numBtn3 = (ElegantNumberButton)findViewById(R.id.num3);
         numBtn4 = (ElegantNumberButton)findViewById(R.id.num4);
-        roomCount = new RoomCount();
+        bookingDatabase = new BookingDatabase();
         popup = new Dialog(this);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("RoomCount");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDatabase");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +51,7 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn1.getNumber());
-                roomCount.setQuantity1(num);
-                databaseReference.push().setValue(roomCount);
-                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                bookingDatabase.setQuantity1(num);
             }
         });
 
@@ -61,9 +59,7 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn2.getNumber());
-                roomCount.setQuantity2(num);
-                databaseReference.push().setValue(roomCount);
-                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                bookingDatabase.setQuantity2(num);
             }
         });
 
@@ -71,9 +67,7 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn3.getNumber());
-                roomCount.setQuantity3(num);
-                databaseReference.push().setValue(roomCount);
-                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                bookingDatabase.setQuantity3(num);
             }
         });
 
@@ -81,16 +75,16 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn4.getNumber());
-                roomCount.setQuantity4(num);
-                databaseReference.push().setValue(roomCount);
-                Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                bookingDatabase.setQuantity4(num);
             }
         });
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(roomCount.getQuantity1() != 0 || roomCount.getQuantity2() != 0 || roomCount.getQuantity3() != 0 || roomCount.getQuantity4() != 0){
+                if(bookingDatabase.getQuantity1() != 0 || bookingDatabase.getQuantity2() != 0 || bookingDatabase.getQuantity3() != 0 || bookingDatabase.getQuantity4() != 0){
+                    databaseReference.push().setValue(bookingDatabase);
+                    Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RoomOption.this, Checkout.class));
                 } else {
                     Toast.makeText(RoomOption.this, "Please add room", Toast.LENGTH_SHORT).show();

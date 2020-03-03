@@ -1,6 +1,5 @@
 package com.example.loginproject;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,11 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class Checkout extends AppCompatActivity {
 
@@ -22,7 +17,7 @@ public class Checkout extends AppCompatActivity {
     private Button btnCheckout;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth firebaseAuth;
-    BookingDate bookingDate;
+    BookingDatabase bookingDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +29,7 @@ public class Checkout extends AppCompatActivity {
         dayNight = (TextView)findViewById(R.id.tvDayNight);
         totalPrice = (TextView)findViewById(R.id.tvTotalPrice);
         btnCheckout = (Button) findViewById(R.id.btnCheckout);
-        bookingDate = new BookingDate();
+        bookingDatabase = new BookingDatabase();
 
 //        firebaseAuth = FirebaseAuth.getInstance();
 //        firebaseDatabase = FirebaseDatabase.getInstance();

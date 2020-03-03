@@ -16,12 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class CalendarDate extends AppCompatActivity {
 
@@ -31,7 +27,7 @@ public class CalendarDate extends AppCompatActivity {
     private Dialog popupCID, popupCOD;
     private DatabaseReference databaseReference;
     CalendarView calendarViewCID, calendarViewCOD;
-    BookingDate bookingDate;
+    BookingDatabase bookingDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +42,17 @@ public class CalendarDate extends AppCompatActivity {
         popcid = (ImageView)findViewById(R.id.popupCID);
         popcod = (ImageView)findViewById(R.id.popupCOD);
         confirm = (Button)findViewById(R.id.btnConfirm);
-        bookingDate = new BookingDate();
+        bookingDatabase = new BookingDatabase();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDate");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDatabase");
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CalendarDate.this, RoomOption.class));
-                bookingDate.setCheckoutdate(COD.getText().toString());
-                databaseReference.push().setValue(bookingDate);
+                bookingDatabase.setCheckindate(CID.getText().toString());
+                bookingDatabase.setCheckoutdate(COD.getText().toString());
+                databaseReference.push().setValue(bookingDatabase);
                 Toast.makeText(CalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
             }
         });
@@ -76,14 +73,15 @@ public class CalendarDate extends AppCompatActivity {
         title = (TextView)popupCID.findViewById(R.id.tvTitle1);
         calendarViewCID = (CalendarView)popupCID.findViewById(R.id.calendarViewCID);
 
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.checkindate_popup, (ViewGroup)findViewById(R.id.layoutCID));
+
         calendarViewCID.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String dateCID = (dayOfMonth + 1) + "/" + month + "/" + year;
                 title.setText(dateCID);
-                bookingDate.setCheckindate(dateCID);
-                databaseReference.push().setValue(bookingDate);
-                Toast.makeText(CalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                CID.setText(dateCID);
             }
         });
 
@@ -105,7 +103,7 @@ public class CalendarDate extends AppCompatActivity {
         calendarViewCOD = (CalendarView)popupCOD.findViewById(R.id.calendarViewCOD);
 
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.checkindate_popup, (ViewGroup)findViewById(R.id.layoutCOD));
+        View layout = inflater.inflate(R.layout.checkoutdate_popup, (ViewGroup)findViewById(R.id.layoutCOD));
 
         calendarViewCOD.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
