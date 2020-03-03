@@ -24,7 +24,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ActivityProfile extends AppCompatActivity {
 
     private ImageView profilePic;
     private TextView profileName, profileAge, profileEmail;
@@ -64,29 +64,29 @@ public class ProfileActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText("Name: " + userProfile.getUserName());
-                profileAge.setText("Age: " + userProfile.getUserAge());
-                profileEmail.setText("Email: " + userProfile.getUserEmail());
+                ClassUserProfile classUserProfile = dataSnapshot.getValue(ClassUserProfile.class);
+                profileName.setText("Name: " + classUserProfile.getUserName());
+                profileAge.setText("Age: " + classUserProfile.getUserAge());
+                profileEmail.setText("Email: " + classUserProfile.getUserEmail());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ProfileActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityProfile.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
 
         profileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, UpdateProfile.class));
+                startActivity(new Intent(ActivityProfile.this, ActivityUpdateProfile.class));
             }
         });
 
         changePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, UpdatePassword.class));
+                startActivity(new Intent(ActivityProfile.this, ActivityUpdatePassword.class));
             }
         });
     }

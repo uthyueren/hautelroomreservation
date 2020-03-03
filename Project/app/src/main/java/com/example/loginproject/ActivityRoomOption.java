@@ -1,9 +1,11 @@
 package com.example.loginproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,47 +13,36 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RoomOption extends AppCompatActivity {
+public class ActivityRoomOption extends AppCompatActivity {
 
-    private ImageView back;
     private Dialog popup;
     private ElegantNumberButton numBtn1, numBtn2, numBtn3, numBtn4;
     private Button confirm;
     private DatabaseReference databaseReference;
-    BookingDatabase bookingDatabase;
+    ClassBooking classBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_option);
-
-        back = (ImageView)findViewById(R.id.backRoom);
         confirm = (Button)findViewById(R.id.btnConfirm);
         numBtn1 = (ElegantNumberButton)findViewById(R.id.num1);
         numBtn2 = (ElegantNumberButton)findViewById(R.id.num2);
         numBtn3 = (ElegantNumberButton)findViewById(R.id.num3);
         numBtn4 = (ElegantNumberButton)findViewById(R.id.num4);
-        bookingDatabase = new BookingDatabase();
+        classBooking = new ClassBooking();
         popup = new Dialog(this);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDatabase");
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RoomOption.this, CalendarDate.class));
-            }
-        });
 
         numBtn1.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn1.getNumber());
-                bookingDatabase.setQuantity1(num);
+                classBooking.setQuantity1(num);
             }
         });
 
@@ -59,7 +50,7 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn2.getNumber());
-                bookingDatabase.setQuantity2(num);
+                classBooking.setQuantity2(num);
             }
         });
 
@@ -67,7 +58,7 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn3.getNumber());
-                bookingDatabase.setQuantity3(num);
+                classBooking.setQuantity3(num);
             }
         });
 
@@ -75,38 +66,38 @@ public class RoomOption extends AppCompatActivity {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 int num = Integer.parseInt(numBtn4.getNumber());
-                bookingDatabase.setQuantity4(num);
+                classBooking.setQuantity4(num);
             }
         });
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(bookingDatabase.getQuantity1() != 0 || bookingDatabase.getQuantity2() != 0 || bookingDatabase.getQuantity3() != 0 || bookingDatabase.getQuantity4() != 0){
-                    databaseReference.push().setValue(bookingDatabase);
-                    Toast.makeText(RoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RoomOption.this, Checkout.class));
+                if(classBooking.getQuantity1() != 0 || classBooking.getQuantity2() != 0 || classBooking.getQuantity3() != 0 || classBooking.getQuantity4() != 0){
+                    databaseReference.push().setValue(classBooking);
+                    Toast.makeText(ActivityRoomOption.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ActivityRoomOption.this, ActivityCheckout.class));
                 } else {
-                    Toast.makeText(RoomOption.this, "Please add room", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityRoomOption.this, "Please add room", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    public void showPopup(View v) {
-        TextView close;
+        public void showPopup(View v) {
+            TextView close;
 
-        popup.setContentView(R.layout.info_popup);
-        close = popup.findViewById(R.id.close);
+            popup.setContentView(R.layout.info_popup);
+            close = popup.findViewById(R.id.close);
 
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popup.dismiss();
-            }
-        });
-        popup.show();
-    }
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popup.dismiss();
+                }
+            });
+            popup.show();
+        }
 
     public void showPopupSingle(View v) {
         TextView close;

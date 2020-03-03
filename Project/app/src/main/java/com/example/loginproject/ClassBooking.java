@@ -1,10 +1,33 @@
 package com.example.loginproject;
 
-public class RoomCount {
+public class ClassBooking {
 
+    private String checkindate;
+    private String checkoutdate;
     private Integer quantity1, quantity2, quantity3, quantity4;
 
-    public RoomCount() {
+    public ClassBooking() {
+    }
+
+    public ClassBooking(String checkindate, String checkoutdate) {
+        this.checkindate = checkindate;
+        this.checkoutdate = checkoutdate;
+    }
+
+    public String getCheckindate() {
+        return checkindate;
+    }
+
+    public void setCheckindate(String checkindate) {
+        this.checkindate = checkindate;
+    }
+
+    public String getCheckoutdate() {
+        return checkoutdate;
+    }
+
+    public void setCheckoutdate(String checkoutdate) {
+        this.checkoutdate = checkoutdate;
     }
 
     public Integer getQuantity1() {

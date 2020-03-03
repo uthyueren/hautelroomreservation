@@ -12,7 +12,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,14 +25,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class ActivityRegistration extends AppCompatActivity {
 
     private EditText userName, userPassword, userEmail, userAge;
     private Button regButton;
@@ -95,11 +93,11 @@ public class RegistrationActivity extends AppCompatActivity {
                                 sendEmailVerification();
                                 sendUserData();
                                 firebaseAuth.signOut();
-                                Toast.makeText(RegistrationActivity.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ActivityRegistration.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
                                 finish();
-                                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                                startActivity(new Intent(ActivityRegistration.this, ActivityLogin.class));
                             }else{
-                                Toast.makeText(RegistrationActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ActivityRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
 
                         }
@@ -111,7 +109,7 @@ public class RegistrationActivity extends AppCompatActivity {
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                startActivity(new Intent(ActivityRegistration.this, ActivityLogin.class));
             }
         });
     }
@@ -123,6 +121,7 @@ public class RegistrationActivity extends AppCompatActivity {
         regButton = (Button)findViewById(R.id.registerButton);
         userLogin = (TextView)findViewById(R.id.tvLogin);
         userAge = (EditText)findViewById(R.id.etUserAge);
+        userProfilePic = (ImageView)findViewById(R.id.etProfilePic);
     }
 
     private Boolean validate(){
@@ -151,12 +150,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         sendUserData();
-                        Toast.makeText(RegistrationActivity.this, "Successfully Registered, Verification mail sent!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityRegistration.this, "Successfully Registered, Verification mail sent!", Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
                         finish();
-                        startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                        startActivity(new Intent(ActivityRegistration.this, ActivityLogin.class));
                     }else{
-                        Toast.makeText(RegistrationActivity.this, "Verification mail has'nt been sent!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityRegistration.this, "Verification mail has'nt been sent!", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -171,15 +170,15 @@ public class RegistrationActivity extends AppCompatActivity {
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(RegistrationActivity.this, "Upload failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityRegistration.this, "Upload failed", Toast.LENGTH_SHORT).show();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(RegistrationActivity.this, "Upload successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityRegistration.this, "Upload successful", Toast.LENGTH_SHORT).show();
             }
         });
-        UserProfile userProfile = new UserProfile(age, email, name);
-        myRef.setValue(userProfile);
+        ClassUserProfile classUserProfile = new ClassUserProfile(age, email, name);
+        myRef.setValue(classUserProfile);
     }
 }

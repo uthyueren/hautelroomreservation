@@ -11,13 +11,13 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Checkout extends AppCompatActivity {
+public class ActivityCheckout extends AppCompatActivity {
 
     private TextView checkIn, checkOut, dayNight, totalPrice;
     private Button btnCheckout;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth firebaseAuth;
-    BookingDatabase bookingDatabase;
+    ClassBooking classBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +29,16 @@ public class Checkout extends AppCompatActivity {
         dayNight = (TextView)findViewById(R.id.tvDayNight);
         totalPrice = (TextView)findViewById(R.id.tvTotalPrice);
         btnCheckout = (Button) findViewById(R.id.btnCheckout);
-        bookingDatabase = new BookingDatabase();
+        classBooking = new ClassBooking();
 
 //        firebaseAuth = FirebaseAuth.getInstance();
 //        firebaseDatabase = FirebaseDatabase.getInstance();
-//        DatabaseReference databaseReference = firebaseDatabase.getReference().child("BookingDate");
+//        DatabaseReference databaseReference = firebaseDatabase.getReference().child("BookingDatabase");
 
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Checkout.this, Receipt.class));
+                startActivity(new Intent(ActivityCheckout.this, ActivityReceipt.class));
             }
         });
 

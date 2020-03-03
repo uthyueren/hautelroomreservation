@@ -30,7 +30,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
-public class UpdateProfile extends AppCompatActivity {
+public class ActivityUpdateProfile extends AppCompatActivity {
 
     private EditText newUserName, newUserEmail, newUserAge;
     private Button save;
@@ -76,15 +76,15 @@ public class UpdateProfile extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                newUserName.setText(userProfile.getUserName());
-                newUserAge.setText(userProfile.getUserAge());
-                newUserEmail.setText(userProfile.getUserEmail());
+                ClassUserProfile classUserProfile = dataSnapshot.getValue(ClassUserProfile.class);
+                newUserName.setText(classUserProfile.getUserName());
+                newUserAge.setText(classUserProfile.getUserAge());
+                newUserEmail.setText(classUserProfile.getUserEmail());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(UpdateProfile.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpdateProfile.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -103,21 +103,21 @@ public class UpdateProfile extends AppCompatActivity {
                 String age = newUserAge.getText().toString();
                 String email = newUserEmail.getText().toString();
 
-                UserProfile userProfile = new UserProfile(age, email, name);
+                ClassUserProfile classUserProfile = new ClassUserProfile(age, email, name);
 
-                databaseReference.setValue(userProfile);
+                databaseReference.setValue(classUserProfile);
 
                 StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
                 UploadTask uploadTask = imageReference.putFile(imagePath);
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UpdateProfile.this, "Upload failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityUpdateProfile.this, "Upload failed", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(UpdateProfile.this, "Upload successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityUpdateProfile.this, "Upload successful", Toast.LENGTH_SHORT).show();
                     }
                 });
 

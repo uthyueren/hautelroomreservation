@@ -17,7 +17,7 @@ public class FragmentContact extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.contact, container, false);
+        view = inflater.inflate(R.layout.fragmentcontact, container, false);
         return view;
     }
 }

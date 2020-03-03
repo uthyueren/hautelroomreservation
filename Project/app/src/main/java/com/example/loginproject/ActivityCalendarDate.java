@@ -19,15 +19,15 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class CalendarDate extends AppCompatActivity {
+public class ActivityCalendarDate extends AppCompatActivity {
 
     private TextView CID, COD, title;
-    private ImageView back, popcid, popcod;
+    private ImageView popcid, popcod;
     private Button confirm;
     private Dialog popupCID, popupCOD;
     private DatabaseReference databaseReference;
     CalendarView calendarViewCID, calendarViewCOD;
-    BookingDatabase bookingDatabase;
+    ClassBooking classBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,31 +36,23 @@ public class CalendarDate extends AppCompatActivity {
 
         popupCID = new Dialog(this);
         popupCOD = new Dialog(this);
-        back = (ImageView)findViewById(R.id.backDate);
         CID = (TextView)findViewById(R.id.tvCID);
         COD = (TextView)findViewById(R.id.tvCOD);
         popcid = (ImageView)findViewById(R.id.popupCID);
         popcod = (ImageView)findViewById(R.id.popupCOD);
         confirm = (Button)findViewById(R.id.btnConfirm);
-        bookingDatabase = new BookingDatabase();
+        classBooking = new ClassBooking();
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("BookingDatabase");
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CalendarDate.this, RoomOption.class));
-                bookingDatabase.setCheckindate(CID.getText().toString());
-                bookingDatabase.setCheckoutdate(COD.getText().toString());
-                databaseReference.push().setValue(bookingDatabase);
-                Toast.makeText(CalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CalendarDate.this, SecondActivity.class));
+                startActivity(new Intent(ActivityCalendarDate.this, ActivityRoomOption.class));
+                classBooking.setCheckindate(CID.getText().toString());
+                classBooking.setCheckoutdate(COD.getText().toString());
+                databaseReference.push().setValue(classBooking);
+                Toast.makeText(ActivityCalendarDate.this, "Sent to database", Toast.LENGTH_SHORT).show();
             }
         });
     }

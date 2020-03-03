@@ -1,7 +1,6 @@
 package com.example.loginproject;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -16,7 +15,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SecondActivity extends AppCompatActivity {
+public class ActivityHome extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private TabLayout tabLayout;
@@ -27,13 +26,13 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_home);
 
         btnContinue = (Button)findViewById(R.id.btnContinue);
         tabLayout = (TabLayout)findViewById(R.id.tablayoutid);
         appBarLayout = (AppBarLayout)findViewById(R.id.appbarid);
         viewPager = (ViewPager)findViewById(R.id.secondViewPager);
-        SecondAdapter adapter = new SecondAdapter(getSupportFragmentManager());
+        AdapterHome adapter = new AdapterHome(getSupportFragmentManager());
         //Adding fragment
         adapter.AddFragment(new FragmentAboutUs(), "About Us");
         adapter.AddFragment(new FragmentAmenities(), "Amenities");
@@ -47,7 +46,7 @@ public class SecondActivity extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, CalendarDate.class));
+                startActivity(new Intent(ActivityHome.this, ActivityCalendarDate.class));
             }
         });
     }
@@ -55,7 +54,7 @@ public class SecondActivity extends AppCompatActivity {
     private void Logout(){
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(SecondActivity.this, MainActivity.class));
+        startActivity(new Intent(ActivityHome.this, ActivityLogin.class));
     }
 
     @Override
@@ -72,7 +71,7 @@ public class SecondActivity extends AppCompatActivity {
                 break;
             }
             case R.id.profileMenu: {
-                startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
+                startActivity(new Intent(ActivityHome.this, ActivityProfile.class));
                 break;
             }
         }

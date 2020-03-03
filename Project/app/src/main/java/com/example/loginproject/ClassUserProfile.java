@@ -1,17 +1,17 @@
 package com.example.loginproject;
 
-public class UserProfile {
+public class ClassUserProfile {
     public String userAge;
     public String userEmail;
     public String userName;
 
-    public UserProfile(String userAge, String userEmail, String userName) {
+    public ClassUserProfile(String userAge, String userEmail, String userName) {
         this.userAge = userAge;
         this.userEmail = userEmail;
         this.userName = userName;
     }
 
-    public  UserProfile(){
+    public ClassUserProfile(){
     }
 
     public String getUserAge() {

@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityLogin extends AppCompatActivity {
 
     private EditText Name;
     private EditText Password;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(user != null){
             finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
         }
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
+                startActivity(new Intent(ActivityLogin.this, ActivityRegistration.class));
             }
         });
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PasswordActivity.class));
+                startActivity(new Intent(ActivityLogin.this, ActivityResetPassword.class));
             }
         });
     }
@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
-                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     checkEmailVerification();
                 }else{
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityLogin.this, "Login Failed", Toast.LENGTH_SHORT).show();
                     Info.setText("No of attempts remaining: " + counter);
                     counter--;
                     if(counter == 0){
@@ -104,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         Boolean emailflag = firebaseUser.isEmailVerified();
 
-        startActivity(new Intent(MainActivity.this, SecondActivity.class));
+        startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
 
         if(emailflag){
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
         }else{
             Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT);
             firebaseAuth.signOut();

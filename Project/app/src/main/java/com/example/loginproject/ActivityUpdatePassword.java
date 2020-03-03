@@ -15,9 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.sql.DataTruncation;
-
-public class UpdatePassword extends AppCompatActivity {
+public class ActivityUpdatePassword extends AppCompatActivity {
 
     private Button update;
     private EditText newPassword;
@@ -45,10 +43,10 @@ public class UpdatePassword extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(UpdatePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ActivityUpdatePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
                             finish();
                         }else{
-                            Toast.makeText(UpdatePassword.this, "Password Update Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ActivityUpdatePassword.this, "Password Update Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

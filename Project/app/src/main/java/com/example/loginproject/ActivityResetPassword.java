@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class PasswordActivity extends AppCompatActivity {
+public class ActivityResetPassword extends AppCompatActivity {
 
     private EditText passwordEmail;
     private Button resetPassword;
@@ -23,7 +23,7 @@ public class PasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_password);
+        setContentView(R.layout.activity_reset_password);
 
         passwordEmail = (EditText)findViewById(R.id.etPasswordEmail);
         resetPassword = (Button)findViewById(R.id.btnPasswordEmail);
@@ -35,14 +35,14 @@ public class PasswordActivity extends AppCompatActivity {
                 String useremail = passwordEmail.getText().toString().trim();
 
                 if (useremail.equals("")) {
-                    Toast.makeText(PasswordActivity.this, "Please enter your registered email address", Toast.LENGTH_SHORT);
+                    Toast.makeText(ActivityResetPassword.this, "Please enter your registered email address", Toast.LENGTH_SHORT);
                 }else{
                     firebaseAuth.sendPasswordResetEmail(useremail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(PasswordActivity.this, "Password reset email sent", Toast.LENGTH_SHORT);
+                            Toast.makeText(ActivityResetPassword.this, "Password reset email sent", Toast.LENGTH_SHORT);
                             finish();
-                            startActivity(new Intent(PasswordActivity.this, MainActivity.class));
+                            startActivity(new Intent(ActivityResetPassword.this, ActivityLogin.class));
                         }
                     });
                 }
