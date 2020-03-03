@@ -15,7 +15,7 @@
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hautel Hotel"
+            android:text="Hautel Hotel Receipt"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
