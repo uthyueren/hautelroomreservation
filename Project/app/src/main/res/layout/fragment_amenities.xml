@@ -3,20 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amenities"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,8 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hautel always make sure that its guest live in a comfortable environment.\nHautel offers free Wi-Fi throughout the stay of its guests and also a television that have multiple channels for guests to enjoy.\n\nHautel also provide the important necessities to guest such as a towel , drying appliances and personal items."
-            android:textSize="24sp"/>
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
-
 </LinearLayout>

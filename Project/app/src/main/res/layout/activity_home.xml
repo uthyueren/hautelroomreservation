@@ -51,8 +51,8 @@
         android:id="@+id/btnContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginTop="650dp"
+        android:layout_gravity="center"
         android:text="Continue"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
