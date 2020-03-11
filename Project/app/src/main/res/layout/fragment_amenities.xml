@@ -3,21 +3,158 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_margin="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hautel always make sure that its guest live in a comfortable environment.\nHautel offers free Wi-Fi throughout the stay of its guests and also a television that have multiple channels for guests to enjoy.\n\nHautel also provide the important necessities to guest such as a towel , drying appliances and personal items."
+            android:text="Free Wifi"
             android:textSize="22sp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="30dp"/>
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On-demand movies"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Infinity Pool"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gym"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="90dp"/>
+
+        <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/ic_lens_black_24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sauna"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="120dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="160dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free Parking"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="150dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair Dryer"
+            android:textSize="22sp"
+            android:layout_marginLeft="260dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HD Television"
+            android:textSize="22sp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="30dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="70dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recreation"
+            android:textSize="22sp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="60dp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shower"
+            android:textSize="22sp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="90dp"/>
+    </RelativeLayout>
 </LinearLayout>

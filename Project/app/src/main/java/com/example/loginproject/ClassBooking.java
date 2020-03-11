@@ -2,63 +2,67 @@ package com.example.loginproject;
 
 public class ClassBooking {
 
-    private String checkindate;
-    private String checkoutdate;
-    private Integer quantity1, quantity2, quantity3, quantity4;
+    private String checkinDate;
+    private String checkoutDate;
+    private Integer singleRoom, twinRoom, triRoom, quadRoom;
 
     public ClassBooking() {
     }
 
-    public ClassBooking(String checkindate, String checkoutdate) {
-        this.checkindate = checkindate;
-        this.checkoutdate = checkoutdate;
+    public ClassBooking(String checkindate, String checkoutdate, Integer singleRoom, Integer twinRoom, Integer triRoom, Integer quadRoom) {
+        this.checkinDate = checkindate;
+        this.checkoutDate = checkoutdate;
+        this.singleRoom = singleRoom;
+        this.twinRoom = twinRoom;
+        this.triRoom = triRoom;
+        this.quadRoom = quadRoom;
     }
 
     public String getCheckindate() {
-        return checkindate;
+        return checkinDate;
     }
 
     public void setCheckindate(String checkindate) {
-        this.checkindate = checkindate;
+        this.checkinDate = checkindate;
     }
 
     public String getCheckoutdate() {
-        return checkoutdate;
+        return checkoutDate;
     }
 
     public void setCheckoutdate(String checkoutdate) {
-        this.checkoutdate = checkoutdate;
+        this.checkoutDate = checkoutdate;
     }
 
-    public Integer getQuantity1() {
-        return quantity1;
+    public Integer getSingleRoom() {
+        return singleRoom;
     }
 
-    public void setQuantity1(Integer quantity1) {
-        this.quantity1 = quantity1;
+    public void setSingleRoom(Integer singleRoom) {
+        this.singleRoom = singleRoom;
     }
 
-    public Integer getQuantity2() {
-        return quantity2;
+    public Integer getTwinRoom() {
+        return twinRoom;
     }
 
-    public void setQuantity2(Integer quantity2) {
-        this.quantity2 = quantity2;
+    public void setTwinRoom(Integer twinRoom) {
+        this.twinRoom = twinRoom;
     }
 
-    public Integer getQuantity3() {
-        return quantity3;
+    public Integer getTriRoom() {
+        return triRoom;
     }
 
-    public void setQuantity3(Integer quantity3) {
-        this.quantity3 = quantity3;
+    public void setTriRoom(Integer triRoom) {
+        this.triRoom = triRoom;
     }
 
-    public Integer getQuantity4() {
-        return quantity4;
+    public Integer getQuadRoom() {
+        return quadRoom;
     }
 
-    public void setQuantity4(Integer quantity4) {
-        this.quantity4 = quantity4;
+    public void setQuadRoom(Integer quadRoom) {
+        this.quadRoom = quadRoom;
     }
 }

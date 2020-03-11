@@ -14,8 +14,8 @@
         <activity android:name=".ActivityBooked"></activity>
         <activity android:name=".ActivityReceipt" />
         <activity android:name=".ActivityCheckout" />
-        <activity android:name=".ActivityRoomOption" />
-        <activity android:name=".ActivityCalendarDate" />
+        <activity android:name=".ActivityBooking"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ActivityUpdatePassword" />
         <activity android:name=".ActivityUpdateProfile" />
         <activity android:name=".ClassUserProfile" />

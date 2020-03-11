@@ -11,17 +11,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.appbar.AppBarLayout;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityHome extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private TabLayout tabLayout;
-    private AppBarLayout appBarLayout;
     private ViewPager viewPager;
     private Button btnContinue;
+    private ImageSlider imageSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +34,9 @@ public class ActivityHome extends AppCompatActivity {
 
         btnContinue = (Button)findViewById(R.id.btnContinue);
         tabLayout = (TabLayout)findViewById(R.id.tablayoutid);
-        appBarLayout = (AppBarLayout)findViewById(R.id.appbarid);
-        viewPager = (ViewPager)findViewById(R.id.secondViewPager);
+        viewPager = (ViewPager)findViewById(R.id.homeViewPager);
+        imageSlider = (ImageSlider)findViewById(R.id.homeSlider);
+
         AdapterHome adapter = new AdapterHome(getSupportFragmentManager());
         //Adding fragment
         adapter.AddFragment(new FragmentAboutUs(), "About Us");
@@ -46,9 +51,15 @@ public class ActivityHome extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActivityHome.this, ActivityCalendarDate.class));
+                startActivity(new Intent(ActivityHome.this, ActivityBooking.class));
             }
         });
+
+        List<SlideModel> slideModel = new ArrayList<>();
+        slideModel.add(new SlideModel(R.drawable.hautel1, "Hautel1"));
+        slideModel.add(new SlideModel(R.drawable.hautel2, "Hautel2"));
+        slideModel.add(new SlideModel(R.drawable.hautel3, "Hautel3"));
+        imageSlider.setImageList(slideModel, true);
     }
 
     private void Logout(){

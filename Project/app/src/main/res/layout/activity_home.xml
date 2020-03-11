@@ -6,21 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarid"
-        android:layout_height="260dp"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-5dp"
-            android:src="@drawable/hautel2"/>
-    </com.google.android.material.appbar.AppBarLayout>
+    <com.denzcoskun.imageslider.ImageSlider
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/homeSlider"
+        app:auto_cycle="true"
+        app:delay="1"
+        app:period="1000"
+        app:placeholder="@drawable/hautel1"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayoutid"
-        android:layout_marginTop="255dp"
+        android:layout_marginTop="250dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F84886">
@@ -43,15 +40,16 @@
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/secondViewPager">
+        android:layout_height="285dp"
+        android:layout_marginTop="295dp"
+        android:id="@+id/homeViewPager">
     </androidx.viewpager.widget.ViewPager>
 
     <Button
         android:id="@+id/btnContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="550dp"
         android:layout_gravity="center"
         android:text="Continue"/>
 

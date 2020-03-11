@@ -37,6 +37,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
 }
 
 apply plugin: 'com.google.gms.google-services'

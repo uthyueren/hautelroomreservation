@@ -11,18 +11,19 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hautel hotel has been offering its \nguest the best since 1969. Hautel has  always strived to offer the best for its guest with it's easy going atmosphere and a stylish interior look."
+            android:text="Staying guests or future guests are welcomed to contact us through our 24/7 customer line provided by Hautel."
             android:textSize="22sp"
             android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hautel offers its guest with 4 room choice that ranges from affordable rooms to luxury suites."
-            android:textSize="22sp"
+            android:text="Hautel No.3 \nJalan Bukit Keramat \nKampung Datuk Keramat \n\n(+60) 123456789 \nnasilemarcc@gmail.com"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginTop="110dp"/>
     </RelativeLayout>
 </LinearLayout>
