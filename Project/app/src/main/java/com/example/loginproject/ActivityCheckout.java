@@ -51,11 +51,10 @@ public class ActivityCheckout extends AppCompatActivity {
                 ClassBooking classBooking = dataSnapshot.getValue(ClassBooking.class);
                 checkIn.setText(classBooking.getCheckindate());
                 checkOut.setText(classBooking.getCheckoutdate());
-//                String Q1 = dataSnapshot.child("singleRoom").getValue().toString();
-//                singleQ.setText(Q1);
-//                twinQ.setText(classBooking.getTwinRoom());
-//                triQ.setText(classBooking.getTriRoom());
-//                quadQ.setText(classBooking.getQuadRoom());
+                singleQ.setText(classBooking.getSingleRoom());
+                twinQ.setText(classBooking.getTwinRoom());
+                triQ.setText(classBooking.getTriRoom());
+                quadQ.setText(classBooking.getQuadRoom());
 
             }
 
