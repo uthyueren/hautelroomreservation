@@ -4,14 +4,16 @@ public class ClassBooking {
 
     private String checkinDate;
     private String checkoutDate;
+    private String bookingNum;
     private Integer singleRoom, twinRoom, triRoom, quadRoom;
 
     public ClassBooking() {
     }
 
-    public ClassBooking(String checkindate, String checkoutdate, Integer singleRoom, Integer twinRoom, Integer triRoom, Integer quadRoom) {
+    public ClassBooking(String checkindate, String checkoutdate, Integer singleRoom, Integer twinRoom, Integer triRoom, Integer quadRoom, String bookingNumber) {
         this.checkinDate = checkindate;
         this.checkoutDate = checkoutdate;
+        this.bookingNum = bookingNum;
         this.singleRoom = singleRoom;
         this.twinRoom = twinRoom;
         this.triRoom = triRoom;
@@ -32,6 +34,14 @@ public class ClassBooking {
 
     public void setCheckoutdate(String checkoutdate) {
         this.checkoutDate = checkoutdate;
+    }
+
+    public String getBookingNumber() {
+        return bookingNum;
+    }
+
+    public void setBookingNum(String bookingNumber) {
+        this.bookingNum = bookingNum;
     }
 
     public Integer getSingleRoom() {

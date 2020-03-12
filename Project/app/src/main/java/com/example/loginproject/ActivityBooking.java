@@ -21,9 +21,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 public class ActivityBooking extends AppCompatActivity {
 
-    private TextView CID, COD, title;
+    private TextView CID, COD, title, randomNumber;
     private ImageView popcid, popcod;
     private FloatingActionButton confirm;
     private Dialog popupCID, popupCOD;
@@ -38,20 +40,27 @@ public class ActivityBooking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
-        confirm = (FloatingActionButton)findViewById(R.id.btnConfirm);
-        numBtn1 = (ElegantNumberButton)findViewById(R.id.num1);
-        numBtn2 = (ElegantNumberButton)findViewById(R.id.num2);
-        numBtn3 = (ElegantNumberButton)findViewById(R.id.num3);
-        numBtn4 = (ElegantNumberButton)findViewById(R.id.num4);
+        confirm = findViewById(R.id.btnConfirm);
+        numBtn1 = findViewById(R.id.num1);
+        numBtn2 = findViewById(R.id.num2);
+        numBtn3 = findViewById(R.id.num3);
+        numBtn4 = findViewById(R.id.num4);
         classBooking = new ClassBooking();
         popup = new Dialog(this);
         popupCID = new Dialog(this);
         popupCOD = new Dialog(this);
-        CID = (TextView)findViewById(R.id.tvCID);
-        COD = (TextView)findViewById(R.id.tvCOD);
-        popcid = (ImageView)findViewById(R.id.popupCID);
-        popcod = (ImageView)findViewById(R.id.popupCOD);
+        CID = findViewById(R.id.tvCID);
+        COD = findViewById(R.id.tvCOD);
+        popcid = findViewById(R.id.popupCID);
+        popcod = findViewById(R.id.popupCOD);
+        randomNumber = findViewById(R.id.randomNumber);
         classBooking = new ClassBooking();
+
+        Random r = new Random();
+        int minNumber = 10000;
+        int maxNumber = 100000;
+        int random = r.nextInt((maxNumber - minNumber) + 1) + minNumber;
+        randomNumber.setText("Your Booking Number: " + String.valueOf(random));
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("ClassBooking");
 
@@ -92,6 +101,7 @@ public class ActivityBooking extends AppCompatActivity {
             public void onClick(View v) {
                 classBooking.setCheckindate(CID.getText().toString());
                 classBooking.setCheckoutdate(COD.getText().toString());
+                classBooking.setBookingNum(randomNumber.getText().toString());
                 if(classBooking.getSingleRoom() != 0 || classBooking.getTwinRoom() != 0 || classBooking.getTriRoom() != 0 || classBooking.getQuadRoom() != 0){
                     databaseReference.push().setValue(classBooking);
                     Toast.makeText(ActivityBooking.this, "Sent to database", Toast.LENGTH_SHORT).show();
@@ -107,9 +117,9 @@ public class ActivityBooking extends AppCompatActivity {
         Button saveCID;
 
         popupCID.setContentView(R.layout.popup_checkindate);
-        saveCID = (Button)popupCID.findViewById(R.id.saveCID);
-        title = (TextView)popupCID.findViewById(R.id.tvTitle1);
-        calendarViewCID = (CalendarView)popupCID.findViewById(R.id.calendarViewCID);
+        saveCID = popupCID.findViewById(R.id.saveCID);
+        title = popupCID.findViewById(R.id.tvTitle1);
+        calendarViewCID = popupCID.findViewById(R.id.calendarViewCID);
 
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.popup_checkindate, (ViewGroup)findViewById(R.id.layoutCID));
@@ -136,9 +146,9 @@ public class ActivityBooking extends AppCompatActivity {
         Button saveCOD;
 
         popupCOD.setContentView(R.layout.popup_checkoutdate);
-        saveCOD = (Button)popupCOD.findViewById(R.id.saveCOD);
-        title = (TextView)popupCOD.findViewById(R.id.tvTitle2);
-        calendarViewCOD = (CalendarView)popupCOD.findViewById(R.id.calendarViewCOD);
+        saveCOD = popupCOD.findViewById(R.id.saveCOD);
+        title = popupCOD.findViewById(R.id.tvTitle2);
+        calendarViewCOD = popupCOD.findViewById(R.id.calendarViewCOD);
 
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.popup_checkoutdate, (ViewGroup)findViewById(R.id.layoutCOD));

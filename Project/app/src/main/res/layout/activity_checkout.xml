@@ -13,7 +13,6 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Checkout"
@@ -56,16 +55,87 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_marginTop="100dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="160dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp">
 
         <TextView
-            android:id="@+id/tvDayNight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Days, Nights"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:text="Single Room"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twin Room"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family Tri Room"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family Quad Room"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="150dp"/>
+
+        <TextView
+            android:id="@+id/singleQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 0"
+            android:textSize="22sp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="30dp"/>
+
+        <TextView
+            android:id="@+id/twinQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 0"
+            android:textSize="22sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/triQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 0"
+            android:textSize="22sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:id="@+id/quadQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 0"
+            android:textSize="22sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
             android:layout_marginTop="150dp"/>
     </RelativeLayout>
 
@@ -73,50 +143,22 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/black"
-        android:layout_marginTop="200dp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp">
-
-        <TextView
-            android:id="@+id/tvRoomName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Room Name"
-            android:textSize="22sp"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_marginTop="600dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="130dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:layout_marginTop="600dp">
+        android:layout_alignParentBottom="true">
 
         <TextView
-            android:id="@+id/tvRoomName"
+            android:id="@+id/tvTotalRoomNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Room :"
+            android:text="Total Room: #"
             android:textSize="24sp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:id="@+id/tvRoomNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#"
-            android:textSize="24sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="160dp"/>
 
         <TextView
             android:id="@+id/tvTotalPrice"
