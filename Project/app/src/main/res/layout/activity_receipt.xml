@@ -19,7 +19,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/tv2"
@@ -28,8 +28,8 @@
             android:layout_below="@id/tv1"
             android:text="Hautel No.3 \nJalan Bukit Keramat \nKampung Datuk Keramat"
             android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:textStyle="italic"
             android:layout_below="@id/tv2"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/tvDateReceipt"
@@ -135,7 +135,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/black"
-        android:layout_marginTop="665dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"/>
 
     <Button
         android:id="@+id/btnHome"

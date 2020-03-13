@@ -292,6 +292,7 @@
             android:textSize="22sp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="40dp"
+            android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
 
         <TextView
@@ -302,6 +303,7 @@
             android:textSize="22sp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="40dp"
+            android:layout_alignParentLeft="true"
             android:layout_marginLeft="240dp"/>
 
         <TextView
