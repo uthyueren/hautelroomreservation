@@ -29,6 +29,7 @@ public class ActivityBooking extends AppCompatActivity {
     private ImageView popcid, popcod;
     private FloatingActionButton confirm;
     private Dialog popupCID, popupCOD;
+    private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private Dialog popup;
     private ElegantNumberButton numBtn1, numBtn2, numBtn3, numBtn4;
@@ -60,9 +61,10 @@ public class ActivityBooking extends AppCompatActivity {
         int minNumber = 10000;
         int maxNumber = 100000;
         int random = r.nextInt((maxNumber - minNumber) + 1) + minNumber;
-        randomNumber.setText("Your Booking Number: " + String.valueOf(random));
+        randomNumber.setText(String.valueOf(random));
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("ClassBooking");
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference().child("ClassBooking");
 
         numBtn1.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
@@ -103,7 +105,7 @@ public class ActivityBooking extends AppCompatActivity {
                 classBooking.setCheckoutdate(COD.getText().toString());
                 classBooking.setBookingNum(randomNumber.getText().toString());
                 if(classBooking.getSingleRoom() != 0 || classBooking.getTwinRoom() != 0 || classBooking.getTriRoom() != 0 || classBooking.getQuadRoom() != 0){
-                    databaseReference.push().setValue(classBooking);
+                    databaseReference.child("booking1").setValue(classBooking);
                     Toast.makeText(ActivityBooking.this, "Sent to database", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(ActivityBooking.this, ActivityCheckout.class));
                 } else {

@@ -39,7 +39,7 @@ public class ActivityReceipt extends AppCompatActivity {
         receipt.setText(currentDate);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("ClassBooking");
+        databaseReference = firebaseDatabase.getReference().child("ClassBooking").child("booking1");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

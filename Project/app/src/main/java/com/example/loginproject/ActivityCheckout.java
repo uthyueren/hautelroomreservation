@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ActivityCheckout extends AppCompatActivity {
 
-    private TextView checkIn, checkOut, totalRoom, totalPrice, singleQ, twinQ, triQ, quadQ;
+    private TextView checkIn, checkOut, roomNum, totalPrice, singleQ, twinQ, triQ, quadQ;
     private FloatingActionButton btnConfirm;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -33,7 +33,7 @@ public class ActivityCheckout extends AppCompatActivity {
 
         checkIn = findViewById(R.id.checkin);
         checkOut = findViewById(R.id.checkout);
-        totalRoom = findViewById(R.id.tvTotalRoomNumber);
+        roomNum = findViewById(R.id.checkoutRoomNumber);
         totalPrice = findViewById(R.id.tvTotalPrice);
         singleQ = findViewById(R.id.singleQ);
         twinQ = findViewById(R.id.twinQ);
@@ -43,19 +43,25 @@ public class ActivityCheckout extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("ClassBooking");
+        databaseReference = firebaseDatabase.getReference().child("ClassBooking").child("booking1");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ClassBooking classBooking = dataSnapshot.getValue(ClassBooking.class);
-                checkIn.setText(classBooking.getCheckindate());
-                checkOut.setText(classBooking.getCheckoutdate());
-                singleQ.setText(classBooking.getSingleRoom());
-                twinQ.setText(classBooking.getTwinRoom());
-                triQ.setText(classBooking.getTriRoom());
-                quadQ.setText(classBooking.getQuadRoom());
-
+                String checkin = dataSnapshot.child("checkindate").getValue().toString();
+                checkIn.setText(checkin);
+                String checkout = dataSnapshot.child("checkoutdate").getValue().toString();
+                checkOut.setText(checkout);
+                String Q1 = "Quantity: " + Integer.valueOf(dataSnapshot.child("singleRoom").getValue().toString());
+                singleQ.setText(Q1);
+                String Q2 = "Quantity: " + Integer.valueOf(dataSnapshot.child("twinRoom").getValue().toString());
+                twinQ.setText(Q2);
+                String Q3 = "Quantity: " + Integer.valueOf(dataSnapshot.child("triRoom").getValue().toString());
+                triQ.setText(Q3);
+                String Q4 = "Quantity: " + Integer.valueOf(dataSnapshot.child("quadRoom").getValue().toString());
+                quadQ.setText(Q4);
+                String room = dataSnapshot.child("bookingNum").getValue().toString();
+                roomNum.setText(room);
             }
 
             @Override
