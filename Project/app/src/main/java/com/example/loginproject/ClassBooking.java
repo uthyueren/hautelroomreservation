@@ -36,11 +36,11 @@ public class ClassBooking {
         this.checkoutDate = checkoutdate;
     }
 
-    public String getBookingNumber() {
+    public String getBookingNum() {
         return bookingNum;
     }
 
-    public void setBookingNum(String bookingNumber) {
+    public void setBookingNum(String bookingNum) {
         this.bookingNum = bookingNum;
     }
 
