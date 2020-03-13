@@ -90,8 +90,8 @@ public class ActivityLogin extends AppCompatActivity {
                     checkEmailVerification();
                 }else{
                     Toast.makeText(ActivityLogin.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    Info.setText("No of attempts remaining: " + counter);
                     counter--;
+                    Info.setText("No of attempts remaining: " + counter);
                     if(counter == 0){
                         Login.setEnabled(false);
                     }
@@ -104,9 +104,10 @@ public class ActivityLogin extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         Boolean emailflag = firebaseUser.isEmailVerified();
 
-        startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
+        //startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
 
         if(emailflag){
+            finish();
             startActivity(new Intent(ActivityLogin.this, ActivityHome.class));
         }else{
             Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT);

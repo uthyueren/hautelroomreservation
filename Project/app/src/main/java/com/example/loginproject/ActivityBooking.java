@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,7 +30,11 @@ public class ActivityBooking extends AppCompatActivity {
     private ImageView popcid, popcod;
     private FloatingActionButton confirm;
     private Dialog popupCID, popupCOD;
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+
     private Dialog popup;
     private ElegantNumberButton numBtn1, numBtn2, numBtn3, numBtn4;
     CalendarView calendarViewCID, calendarViewCOD;
@@ -61,6 +66,9 @@ public class ActivityBooking extends AppCompatActivity {
         int maxNumber = 100000;
         int random = r.nextInt((maxNumber - minNumber) + 1) + minNumber;
         randomNumber.setText("Your Booking Number: " + String.valueOf(random));
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("ClassBooking");
 
