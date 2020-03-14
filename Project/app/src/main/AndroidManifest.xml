@@ -11,12 +11,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".ActivityReceipt"
+        <activity
+            android:name=".ActivityReceipt"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ActivityCheckout"
+        <activity
+            android:name=".ActivityCheckout"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ActivityBooking"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ActivityBooking"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ActivityUpdatePassword" />
         <activity android:name=".ActivityUpdateProfile" />
         <activity android:name=".ClassUserProfile" />
@@ -24,7 +27,8 @@
         <activity android:name=".ActivityResetPassword" />
         <activity android:name=".ActivityRegistration" />
         <activity android:name=".ActivityHome" />
-        <activity android:name=".ActivityLogin">
+        <activity android:name=".ActivityLogin"/>
+            <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

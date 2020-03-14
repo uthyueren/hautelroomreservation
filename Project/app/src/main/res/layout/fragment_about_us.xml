@@ -11,18 +11,18 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="Hautel hotel has been offering its \nguest the best since 1969. Hautel has  always strived to offer the best for its guest with it's easy going atmosphere and a stylish interior look."
             android:textSize="22sp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="30dp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="Hautel offers its guest with 4 room choice that ranges from affordable rooms to luxury suites."
             android:textSize="22sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="180dp"/>
     </RelativeLayout>
 </LinearLayout>

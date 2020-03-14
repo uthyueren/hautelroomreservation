@@ -15,8 +15,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:text="Family Suite"
-            android:textSize="24sp"/>
+            android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/close"
@@ -41,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2 king bed \nRoom Size: 27 m²/291 ft² \nCity view \nNon-smoking \nShower"
+                android:text=" - 2 king bed \n - Room Size: 27 m²/291 ft² \n - City view \n - Non-smoking room \n - Shower"
                 android:textSize="20sp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

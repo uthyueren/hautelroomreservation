@@ -38,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Single Room"
-                android:textSize="22sp"
+                android:textSize="20sp"
+                android:layout_marginTop="6dp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -62,7 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Twin Room"
-                android:textSize="22sp"
+                android:textSize="20sp"
+                android:layout_marginTop="6dp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -86,7 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Family Triple"
-                android:textSize="22sp"
+                android:textSize="20sp"
+                android:layout_marginTop="6dp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -110,7 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Family Suite"
-                android:textSize="22sp"
+                android:textSize="20sp"
+                android:layout_marginTop="6dp"
                 android:layout_marginLeft="125dp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

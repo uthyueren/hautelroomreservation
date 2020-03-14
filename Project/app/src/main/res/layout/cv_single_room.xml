@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1 single bed \nRoom Size: 16 m²/172 ft² \nWindows view \nNon-smoking"
+                android:text=" - 1 single bed \n - Room Size: 16 m²/172 ft² \n - Windows view \n - Non-smoking room"
                 android:textSize="20sp"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

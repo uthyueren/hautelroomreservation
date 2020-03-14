@@ -4,20 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,8 +40,10 @@ import java.io.IOException;
 
 public class ActivityUpdateProfile extends AppCompatActivity {
 
-    private EditText newUserName, newUserEmail, newUserAge;
+    private EditText newUserName, newUserAge;
+    private TextView newUserEmail;
     private Button save;
+    private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
@@ -41,6 +51,7 @@ public class ActivityUpdateProfile extends AppCompatActivity {
     private static int PICK_IMAGE = 123;
     Uri imagePath;
     private StorageReference storageReference;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -62,7 +73,7 @@ public class ActivityUpdateProfile extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
 
         newUserName = (EditText)findViewById(R.id.etNameUpdate);
-        newUserEmail = (EditText)findViewById(R.id.etEmailUpdate);
+        newUserEmail = (TextView)findViewById(R.id.tvEmail);
         newUserAge = (EditText)findViewById(R.id.etAgeUpdate);
         save = (Button)findViewById(R.id.btnSave);
         updateProfilePic = (ImageView)findViewById(R.id.ivProfileUpdate);
@@ -71,7 +82,42 @@ public class ActivityUpdateProfile extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
 
-        final DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        final DatabaseReference databaseReference = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
+        storageReference = firebaseStorage.getReference();
+
+        StorageReference mImageRef = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+        //StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+        final long ONE_MEGABYTE = 1024 * 1024;
+
+        mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                DisplayMetrics dm = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+                updateProfilePic.setMinimumHeight(dm.heightPixels);
+                updateProfilePic.setMinimumWidth(dm.widthPixels);
+                updateProfilePic.setImageBitmap(bm);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+
+
+        updateProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE);
+
+            }
+        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,6 +126,7 @@ public class ActivityUpdateProfile extends AppCompatActivity {
                 newUserName.setText(classUserProfile.getUserName());
                 newUserAge.setText(classUserProfile.getUserAge());
                 newUserEmail.setText(classUserProfile.getUserEmail());
+                //newUserEmail.setText(classUserProfile.getUserEmail());
             }
 
             @Override
@@ -88,13 +135,6 @@ public class ActivityUpdateProfile extends AppCompatActivity {
             }
         });
 
-        final StorageReference storageReference = firebaseStorage.getReference();
-        storageReference.child(firebaseAuth.getUid()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).fit().centerCrop().into(updateProfilePic);
-            }
-        });
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,32 +147,35 @@ public class ActivityUpdateProfile extends AppCompatActivity {
 
                 databaseReference.setValue(classUserProfile);
 
+
+                //firebaseAuth.updateCurrentUser();
+
                 StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+
                 UploadTask uploadTask = imageReference.putFile(imagePath);
+
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ActivityUpdateProfile.this, "Upload failed", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(ActivityUpdateProfile.this,"Upload Failed", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(ActivityUpdateProfile.this, "Upload successful", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(ActivityUpdateProfile.this,"Upload Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ActivityUpdateProfile.this, ActivityProfile.class));
                     }
                 });
 
-                finish();
+
+
+
+
             }
         });
 
-        updateProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select image"), PICK_IMAGE);
-            }
-        });
     }
+
 }

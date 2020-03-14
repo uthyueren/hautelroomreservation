@@ -11,22 +11,23 @@
         android:layout_marginTop="20dp">
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/wifi"
             android:layout_margin="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Free Wifi"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="3dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/cinema"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"/>
 
@@ -34,14 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="On-demand movies"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="33dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/pool"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="70dp"/>
 
@@ -49,14 +50,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Infinity Pool"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="60dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="63dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/gym"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="100dp"/>
 
@@ -64,14 +65,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gym"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="90dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="93dp"/>
 
         <ImageView
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:background="@drawable/ic_lens_black_24dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/sauna"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="130dp"/>
 
@@ -79,14 +80,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sauna"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="120dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="123dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/parking"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="160dp"/>
 
@@ -94,67 +95,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Free Parking"
-            android:textSize="22sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="150dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="153dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
-            android:layout_marginLeft="240dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/hairdryer"
+            android:layout_marginLeft="220dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hair Dryer"
-            android:textSize="22sp"
-            android:layout_marginLeft="260dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="243dp"
+            android:layout_marginTop="3dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
-            android:layout_marginLeft="240dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/tv"
+            android:layout_marginLeft="220dp"
             android:layout_marginTop="40dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HD Television"
-            android:textSize="22sp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="30dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="243dp"
+            android:layout_marginTop="33dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="70dp"/>
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/recreation" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recreation"
-            android:textSize="22sp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="60dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="243dp"
+            android:layout_marginTop="63dp"/>
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/ic_lens_black_24dp"
-            android:layout_marginLeft="240dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/shower"
+            android:layout_marginLeft="220dp"
             android:layout_marginTop="100dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shower"
-            android:textSize="22sp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="90dp"/>
+            android:textSize="20sp"
+            android:layout_marginLeft="243dp"
+            android:layout_marginTop="93dp"/>
     </RelativeLayout>
 </LinearLayout>

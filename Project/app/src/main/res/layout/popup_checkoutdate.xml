@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Check-out Date"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
@@ -35,11 +35,13 @@
 
         <Button
             android:id="@+id/saveCOD"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_width="215dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/custombutton02"
             android:text="Save \date!"
-            android:textSize="14sp"
-            android:layout_centerInParent="true"/>
+            android:textSize="12sp" />
     </RelativeLayout>
 
 </LinearLayout>

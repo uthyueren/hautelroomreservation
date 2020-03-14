@@ -91,11 +91,11 @@ public class ActivityRegistration extends AppCompatActivity {
 
                             if(task.isSuccessful()){
                                 sendEmailVerification();
-                                sendUserData();
-                                firebaseAuth.signOut();
-                                Toast.makeText(ActivityRegistration.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
-                                finish();
-                                startActivity(new Intent(ActivityRegistration.this, ActivityLogin.class));
+                                //sendUserData();
+                                //firebaseAuth.signOut();
+                                //Toast.makeText(ActivityRegistration.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
+                                //finish();
+                                //startActivity(new Intent(ActivityRegistration.this, ActivityLogin.class));
                             }else{
                                 Toast.makeText(ActivityRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
@@ -115,13 +115,13 @@ public class ActivityRegistration extends AppCompatActivity {
     }
 
     private void setupUIViews(){
-        userName = (EditText)findViewById(R.id.etUserName);
-        userPassword = (EditText)findViewById(R.id.etUserPass);
-        userEmail = (EditText)findViewById(R.id.etUserEmail);
-        regButton = (Button)findViewById(R.id.registerButton);
-        userLogin = (TextView)findViewById(R.id.tvLogin);
-        userAge = (EditText)findViewById(R.id.etUserAge);
-        userProfilePic = (ImageView)findViewById(R.id.etProfilePic);
+        userName = findViewById(R.id.etUserName);
+        userPassword = findViewById(R.id.etUserPass);
+        userEmail = findViewById(R.id.etUserEmail);
+        regButton = findViewById(R.id.registerButton);
+        userLogin = findViewById(R.id.tvLogin);
+        userAge = findViewById(R.id.etUserAge);
+        userProfilePic = findViewById(R.id.etProfilePic);
     }
 
     private Boolean validate(){
@@ -164,7 +164,7 @@ public class ActivityRegistration extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {

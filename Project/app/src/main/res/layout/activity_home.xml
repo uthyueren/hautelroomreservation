@@ -47,10 +47,12 @@
 
     <Button
         android:id="@+id/btnContinue"
-        android:layout_width="wrap_content"
+        android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
         android:layout_gravity="center"
-        android:text="Continue"/>
+        android:layout_marginTop="550dp"
+        android:background="@drawable/custombutton02"
+        android:text="Book a room"
+        android:textSize="12dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
