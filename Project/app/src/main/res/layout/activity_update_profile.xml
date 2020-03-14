@@ -17,18 +17,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintVertical_bias="0.618" />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="38dp"
+        android:background="@drawable/custombutton02"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAgeUpdate" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.709" />
 
     <EditText
         android:id="@+id/etEmailUpdate"
@@ -41,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.532" />
 
     <EditText
         android:id="@+id/etNameUpdate"
@@ -54,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintVertical_bias="0.446" />
 
     <ImageView
         android:id="@+id/ivProfileUpdate"
@@ -65,6 +67,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
+        app:layout_constraintVertical_bias="0.201"
         app:srcCompat="@mipmap/ic_launcher" />
 </androidx.constraintlayout.widget.ConstraintLayout>
