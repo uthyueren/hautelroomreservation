@@ -10,11 +10,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Date"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
-        android:gravity="center"/>
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Choose Date"
+        android:textColor="#000"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,9 +36,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Check-in Date"
+                android:textColor="#000"
+
                 android:textSize="24sp"
                 android:layout_marginVertical="15dp"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="15dp"/>
 
             <ImageView
                 android:id="@+id/popupCID"
@@ -65,9 +69,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Check-out Date"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:layout_marginVertical="15dp"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="15dp"/>
 
             <ImageView
                 android:id="@+id/popupCOD"
@@ -88,12 +93,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Room Option"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:layout_marginTop="180dp"/>
+        android:text="Room type"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="185dp" />
 
     <TextView
         android:id="@+id/info"
@@ -101,12 +105,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="185dp"
+        android:layout_marginLeft="315dp"
+        android:layout_marginTop="190dp"
         android:onClick="showPopup"
-        android:text="Room Info"
+        android:textColor="#087FE6"
+        android:text="Room Info?"
         android:textStyle="italic"
-        android:textSize="19sp" />
+        android:textSize="18sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,16 +137,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
+                    android:layout_marginTop="7dp"
                     android:text="Single Room"
+                    android:textColor="#000"
                     android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
-                    android:layout_marginTop="40dp"
-                    android:text="RM125"
-                    android:textSize="28sp" />
+                    android:layout_marginTop="45dp"
+                    android:text="RM 125"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
 
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/num1"
@@ -175,7 +183,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
+                    android:layout_marginTop="7dp"
                     android:text="Twin Room"
+                    android:textColor="#000"
                     android:textSize="22sp" />
 
                 <TextView
@@ -183,8 +193,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
                     android:layout_marginTop="40dp"
-                    android:text="RM132"
-                    android:textSize="28sp" />
+                    android:text="RM 132"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
 
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/num2"
@@ -218,7 +229,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
+                    android:layout_marginTop="7dp"
                     android:text="Family Triple"
+                    android:textColor="#000"
                     android:textSize="22sp" />
 
                 <TextView
@@ -226,8 +239,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
                     android:layout_marginTop="40dp"
-                    android:text="RM150"
-                    android:textSize="28sp" />
+                    android:text="RM 150"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
 
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/num3"
@@ -261,7 +275,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
+                    android:layout_marginTop="7dp"
                     android:text="Family Suite"
+                    android:textColor="#000"
                     android:textSize="22sp" />
 
                 <TextView
@@ -269,8 +285,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
                     android:layout_marginTop="40dp"
-                    android:text="RM180"
-                    android:textSize="28sp" />
+                    android:text="RM 180"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
 
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/num4"
@@ -289,18 +306,21 @@
             android:id="@+id/randomNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Booking Number: "
-            android:textSize="22sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000"
+            android:text="Your Booking Number: "
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="95dp"
             android:text="*All price are charged per night"
+            android:textColor="#D32121"
             android:textSize="18sp"
             android:textStyle="italic" />
     </RelativeLayout>

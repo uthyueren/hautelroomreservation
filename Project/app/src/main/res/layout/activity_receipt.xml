@@ -139,10 +139,11 @@
 
     <Button
         android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
+        android:layout_width="124dp"
         android:layout_height="wrap_content"
-        android:text="Back to Main Menu"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custombutton02"
+        android:text="Main Menu" />
 </RelativeLayout>

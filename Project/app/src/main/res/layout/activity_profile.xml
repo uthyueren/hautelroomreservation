@@ -8,15 +8,16 @@
 
     <Button
         android:id="@+id/btnChangePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custombutton02"
         android:text="Change Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSave"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintVertical_bias="0.326" />
 
     <TextView
         android:id="@+id/tvProfileName"
@@ -49,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email: "
-        android:textSize="22sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,9 +71,10 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custombutton02"
+        android:text="Edit Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
