@@ -49,18 +49,19 @@ public class ActivityCheckout extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String checkin = dataSnapshot.child("checkindate").getValue().toString();
-                checkIn.setText(checkin);
                 String checkout = dataSnapshot.child("checkoutdate").getValue().toString();
-                checkOut.setText(checkout);
                 String Q1 = "Quantity: " + Integer.valueOf(dataSnapshot.child("singleRoom").getValue().toString());
-                singleQ.setText(Q1);
                 String Q2 = "Quantity: " + Integer.valueOf(dataSnapshot.child("twinRoom").getValue().toString());
-                twinQ.setText(Q2);
                 String Q3 = "Quantity: " + Integer.valueOf(dataSnapshot.child("triRoom").getValue().toString());
-                triQ.setText(Q3);
                 String Q4 = "Quantity: " + Integer.valueOf(dataSnapshot.child("quadRoom").getValue().toString());
-                quadQ.setText(Q4);
                 String room = dataSnapshot.child("bookingNum").getValue().toString();
+
+                checkIn.setText(checkin);
+                checkOut.setText(checkout);
+                singleQ.setText(Q1);
+                twinQ.setText(Q2);
+                triQ.setText(Q3);
+                quadQ.setText(Q4);
                 roomNum.setText(room);
             }
 

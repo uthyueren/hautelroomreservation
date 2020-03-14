@@ -30,13 +30,9 @@ public class ActivityBooking extends AppCompatActivity {
     private ImageView popcid, popcod;
     private FloatingActionButton confirm;
     private Dialog popupCID, popupCOD;
-
-
     private FirebaseAuth firebaseAuth;
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-
     private Dialog popup;
     private ElegantNumberButton numBtn1, numBtn2, numBtn3, numBtn4;
     CalendarView calendarViewCID, calendarViewCOD;
@@ -76,7 +72,6 @@ public class ActivityBooking extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference().child("ClassBooking");
-
 
         numBtn1.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
