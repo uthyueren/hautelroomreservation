@@ -56,9 +56,9 @@ public class ActivityHome extends AppCompatActivity {
         });
 
         List<SlideModel> slideModel = new ArrayList<>();
-        slideModel.add(new SlideModel(R.drawable.hautel1, "Hautel1"));
-        slideModel.add(new SlideModel(R.drawable.hautel2, "Hautel2"));
-        slideModel.add(new SlideModel(R.drawable.hautel3, "Hautel3"));
+        slideModel.add(new SlideModel(R.drawable.hautel1));
+        slideModel.add(new SlideModel(R.drawable.hautel2));
+        slideModel.add(new SlideModel(R.drawable.hautel3));
         imageSlider.setImageList(slideModel, true);
     }
 

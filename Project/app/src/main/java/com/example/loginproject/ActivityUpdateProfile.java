@@ -34,8 +34,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
-
 import java.io.IOException;
 
 public class ActivityUpdateProfile extends AppCompatActivity {
@@ -72,11 +70,11 @@ public class ActivityUpdateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
-        newUserName = (EditText)findViewById(R.id.etNameUpdate);
-        newUserEmail = (TextView)findViewById(R.id.tvEmail);
-        newUserAge = (EditText)findViewById(R.id.etAgeUpdate);
-        save = (Button)findViewById(R.id.btnSave);
-        updateProfilePic = (ImageView)findViewById(R.id.ivProfileUpdate);
+        newUserName = findViewById(R.id.etNameUpdate);
+        newUserEmail = findViewById(R.id.tvEmail);
+        newUserAge = findViewById(R.id.etAgeUpdate);
+        save = findViewById(R.id.btnSave);
+        updateProfilePic = findViewById(R.id.ivProfileUpdate);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -146,7 +144,6 @@ public class ActivityUpdateProfile extends AppCompatActivity {
                 ClassUserProfile classUserProfile = new ClassUserProfile(age, email, name);
 
                 databaseReference.setValue(classUserProfile);
-
 
                 //firebaseAuth.updateCurrentUser();
 

@@ -91,13 +91,13 @@
         android:layout_marginTop="175dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Room type"
         android:textSize="20sp"
         android:textColor="#000"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="185dp" />
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/info"
@@ -313,7 +313,7 @@
             android:textColor="#000"
             android:text="Your Booking Number: "
             android:textSize="22sp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
 
@@ -324,7 +324,7 @@
             android:text="#"
             android:textSize="22sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="240dp"/>
 
@@ -333,7 +333,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="5dp"
-            android:layout_marginBottom="95dp"
+            android:layout_marginBottom="40dp"
             android:text="*All price are charged per night"
             android:textColor="#D32121"
             android:textSize="18sp"
@@ -348,5 +348,5 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/ic_send_black_24dp"/>
+        android:background="@drawable/ic_arrow_forward_black_24dp"/>
 </RelativeLayout>
