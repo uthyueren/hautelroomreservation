@@ -114,5 +114,4 @@ public class ActivityLogin extends AppCompatActivity {
             firebaseAuth.signOut();
         }
     }
-
 }
